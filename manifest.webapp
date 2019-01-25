@@ -1,0 +1,88 @@
+{
+  "name": "Contacts",
+  "editor": "Cozy",
+  "name_prefix": "Cozy",
+  "slug": "contacts",
+  "icon": "icon.svg",
+  "type": "webapp",
+  "description": "Contact manager for Cozy Cloud",
+  "category": "cozy",
+  "version": "0.7.3",
+  "licence": "AGPL-3.0",
+  "source": "https://github.com/cozy/cozy-contacts.git@build",
+  "developer": {
+    "name": "Cozy Cloud",
+    "url": "https://cozy.io"
+  },
+  "default_locale": "en",
+  "screenshots": [
+    "screenshots/fr/screenshot01.png",
+    "screenshots/fr/screenshot02.png",
+    "screenshots/fr/screenshot03.png"
+  ],
+  "routes": {
+    "/": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
+    },
+    "/services": {
+      "folder": "/intents",
+      "index": "index.html",
+      "public": false
+    }
+  },
+  "permissions": {
+    "apps": {
+      "description": "Required by the cozy-bar to display the icons of the apps",
+      "type": "io.cozy.apps",
+      "verbs": [
+        "GET"
+      ]
+    },
+    "contacts": {
+      "description": "Required to manage your contacts",
+      "type": "io.cozy.contacts",
+      "methods": [
+        "ALL"
+      ]
+    },
+    "contactsgroups": {
+      "description": "Required to manage groups of contacts",
+      "type": "io.cozy.contacts.groups",
+      "methods": [
+        "ALL"
+      ]
+    }
+  },
+  "intents": [
+    {
+      "action": "PICK",
+      "type": [
+        "io.cozy.contacts"
+      ],
+      "href": "/services"
+    },
+    {
+      "action": "CREATE",
+      "type": [
+        "io.cozy.contacts"
+      ],
+      "href": "/services"
+    }
+  ],
+  "locales": {
+    "en": {
+      "short_description": "Cozy Contacts helps you to save and secure your contacts on your Cozy.",
+      "long_description": "With Cozy Contacts you can:\n- Add, modify and sort your contacts.\n- Imports all your contacts from Google, Facebook and more."
+    },
+    "fr": {
+      "short_description": "Cozy Contacts est l’application de sauvegarde et de sécurisation de tous vos contacts sur votre Cozy.",
+      "long_description": "Avec Cozy Contacts vous pourrez :\n- Ajouter, modifier et trier vos contacts,\n- Importer tous vos contacts depuis Google, Facebook et bientôt d'autres sources."
+    }
+  },
+  "langs": [
+    "en",
+    "fr"
+  ]
+}
